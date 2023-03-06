@@ -6,7 +6,7 @@
 This repository is based on the pytorch implementation of Deep SORT: (https://github.com/ZQPei/deep_sort_pytorch.git), the descriptor is either a pretrained VGG19 finetuned on MARKET 1501 data or a U-Net pretrained on clothes data segmentation task and finetuned on Market 1501, both models were trained with a triplet loss. To specify which model to use, please refer to the options of deepsort.py below. Trained models are available (https://drive.google.com/file/d/1UnLqYdZBn8PnYdS4xuRD4XnDg-QMPpZ8/view?usp=share_link), but you can retrain them in the ReID_training.ipynb notebook and visualize the output.
 
 ## Dependencies
-- python 3 (python2 not sure)
+- python 3 
 - numpy
 - scipy
 - opencv-python
