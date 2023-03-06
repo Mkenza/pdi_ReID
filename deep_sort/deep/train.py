@@ -45,6 +45,11 @@ def main():
         help="""The pretrained CNN
                         (e.g. vgg19)""",
     )
+    parser.add_argument(
+        "--reidmodel_path",
+        default="MODEL_clothes_unet.pth",
+        help="""path to pretrained model (for unet finetuning)""",
+    )
     opt = parser.parse_args()
     print(opt)
     logging.basicConfig(format="%(asctime)s %(message)s", level=logging.INFO)
