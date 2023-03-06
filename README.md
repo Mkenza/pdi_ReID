@@ -1,4 +1,4 @@
-# Deep Sort with PyTorch
+# PDI : MOMC Tracking with Deep SORT
 
 
 ![](demo/res_unet_Trim.gif)
