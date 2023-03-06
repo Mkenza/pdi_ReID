@@ -128,11 +128,16 @@ usage: usage: train.py [-h]
                 [--embed_size EMBED_SIZE]
 		[--learning_rate LEARNING_RATE]
 		[--cnn_type CNN_TYPE]
+                [--reidmodel_path REIDMODEL_PATH]
 ```
 
 cnn_type can be vgg19 or unet
 data_path is the path to the folder containing train and test datasets (folders named bounding_box_{train/test}/)
+reidmodel_path is the path to the UNET pretrained on clothes data
 
+the trained model UNet on segmentation task is available at https://drive.google.com/file/d/1UnLqYdZBn8PnYdS4xuRD4XnDg-QMPpZ8/view?usp=share_link .
+
+but the training of the model is done in the deep_sort/deep/Triplet_dataset.ipynb
 
 
 ## References

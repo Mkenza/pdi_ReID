@@ -1,7 +1,7 @@
 from collections import OrderedDict
 import torch
 from torchvision import models
-from .unet_parts import *
+from unet_parts import *
 import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
