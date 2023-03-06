@@ -109,7 +109,7 @@ python deepsort.py [VIDEO_PATH] --fastreid [--config_fastreid ./configs/fastreid
 python deepsort.py [VIDEO_PATH] --mmdet [--config_mmdetection ./configs/mmdet.yaml]
 ```
 Use `--display` to enable display.
-Results will be saved to `./output/results.avi` and `./output/results.txt`.
+Results will be saved to `./output/results_{vgg19/unet}.avi` and `./output/results_{vgg19/unet}.txt`.
 
 All files above can also be accessed from BaiduDisk!
 linker：[BaiduDisk](https://pan.baidu.com/s/1YJ1iPpdFTlUyLFoonYvozg)
