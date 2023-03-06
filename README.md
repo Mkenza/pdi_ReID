@@ -131,9 +131,11 @@ usage: usage: train.py [-h]
                 [--reidmodel_path REIDMODEL_PATH]
 ```
 
-cnn_type can be vgg19 or unet
-data_path is the path to the folder containing train and test datasets (folders named bounding_box_{train/test}/)
-reidmodel_path is the path to the UNET pretrained on clothes data
+- cnn_type can be vgg19 or unet
+
+- data_path is the path to the folder containing train and test datasets (folders named bounding_box_{train/test}/)
+
+- reidmodel_path is the path to the UNET pretrained on clothes data
 
 the trained model UNet on segmentation task is available at https://drive.google.com/file/d/1UnLqYdZBn8PnYdS4xuRD4XnDg-QMPpZ8/view?usp=share_link .
 
