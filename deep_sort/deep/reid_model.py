@@ -99,7 +99,9 @@ class ReIdModel(nn.Module):
         elif "unet" in opt.cnn_type:
             model = UNet(opt)
             if train:
-                model.load_state_dict(opt.unet_path, map_location=torch.device("cpu"))
+                model.load_state_dict(
+                    opt.reidmodel_path, map_location=lambda storage, loc: storage
+                )
         else:
             model = models.__dict__[opt.cnn_type](pretrained=True)
             # model = nn.DataParallel(model).cuda()
@@ -129,6 +131,7 @@ class ReIdModel(nn.Module):
                 del state_dict["cnn.classifier.4.bias"]
         elif "unet" in self.cnn_type:
             for key in state_dict.keys():
+                # rename layers to be compative with the Extractor class
                 if "cnn" in key:
                     key = key[4:]
         super(ReIdModel, self).load_state_dict(state_dict)
@@ -204,11 +207,19 @@ class UNet(nn.Module):
         return self.flatten(x5)
 
     def load_state_dict(self, state_dict, map_location=torch.device("cpu")):
+
         new_state_dict = OrderedDict()
-        state_dict_old = torch.load(state_dict, map_location=torch.device("cpu"))
+
+        state_dict_old = torch.load(
+            state_dict, map_location=lambda storage, loc: storage
+        )
+
         for key in state_dict_old.keys():
+            # overlook weights of the upsampling side
             if ("up" in key) or ("outc" in key):
                 ()
+
+            # rename layers to be compative with the Extractor class
             elif "cnn" in key:
                 new_state_dict[key[4:]] = state_dict_old[key]
             else:
